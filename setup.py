@@ -14,7 +14,7 @@ setup(
     install_requires=['praw'],
     classifiers=[
         "Development Status :: 1 - Planning",
-        "Intended Audience :: Developers/Reddit Mods",
+        "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
     ]
 )

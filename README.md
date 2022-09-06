@@ -1,12 +1,9 @@
 # prawscripts
 
 This is simply a test concept/idea for merging together all public scripts we have and putting a wrapper for it,  
-given permission from the original author. For now, only two functions are created:
+given permission from the original author.
 
-* getinstance
-* makewidget
-
-Installation package at https://pypi.org/project/prawscripts/0.0.2/
+Installation package at https://pypi.org/project/prawscripts/0.0.3/
 
 The main dependency should mainly just be PRAW at this time.
 

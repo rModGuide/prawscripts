@@ -1,9 +1,8 @@
 import os
-import prawscripts.getinstance
-import prawscripts.searchmessageinboxkeyword
+from prawscripts import getinstance, searchmessageinboxkeyword
 
-reddit = prawscripts.getinstance(os.path.dirname(os.getcwd()))
+reddit = getinstance(os.path.dirname(os.getcwd()))
 print(reddit)
 
-result = prawscripts.searchmessageinboxkeyword(reddit, "praw")
+result = searchmessageinboxkeyword(reddit, "praw")
 print(result)

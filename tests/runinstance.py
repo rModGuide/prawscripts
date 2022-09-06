@@ -1,5 +1,5 @@
 import os
-import prawscripts.getinstance
+from prawscripts import getinstance
 
-reddit = prawscripts.getinstance(os.path.dirname(os.getcwd()))
+reddit = getinstance(os.path.dirname(os.getcwd()))
 print(reddit)

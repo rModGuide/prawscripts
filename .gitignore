@@ -1,4 +1,7 @@
 config.txt
+reupload_pkg.sh
+prawscripts/*.pyc
+prawscripts/__pycache__/
 dist/
 build/
 prawscripts.egg-info/

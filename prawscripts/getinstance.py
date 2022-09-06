@@ -1,3 +1,5 @@
+import praw
+
 def getinstance(path):
     """
     Script that returns PRAW instance for user.

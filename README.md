@@ -8,4 +8,5 @@ given permission from the original author. For now, only two functions are creat
 
 Installation package at https://pypi.org/project/prawscripts/0.0.2/
 
-Open to contributors for uploading/reuploading new/existing functions and testing if package is working properly.
+Open to contributors from r/ModGuide for uploading/reuploading new/existing functions and testing if package is  
+working properly.

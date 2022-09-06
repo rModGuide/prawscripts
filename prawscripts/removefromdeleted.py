@@ -8,13 +8,12 @@ def removefromdeleted(instance, sub_name):
         The name of the PRAW instance
     sub_name : str
         The name of subreddit you're working on
-
     """
     subreddit = instance.subreddit(sub_name)
 
     # Fetch the last 1000 items and remove them if the OP deleted their acount.
     for i, post in enumerate(subreddit.new(limit=1000), 1):
-        #print(f"{i} of 1000")
+        print(f"{i} of 1000")
         if post.author is None:
             post.mod.remove()
 

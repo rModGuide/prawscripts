@@ -16,10 +16,15 @@ def widgetbuilder(instance, sub_name, widget_title, background_color, header_col
         Header color for your widget using hex formatted color
     subList : list
         List of related subreddits communities
+
+    Returns
+    -------
+    new_widget
+        The newly created community widget
     """
     widget_moderation = instance.subreddit(sub_name).widget.widget_mod
     styles = {"backgroundColor", background_color, "headerColor", header_color}
     subreddits = subList
     new_widget = widget_moderation.add_communit_list(widget_title, subreddits, styles)
 
-    return widget_moderation, styles, subreddits, new_widget
+    return new_widget

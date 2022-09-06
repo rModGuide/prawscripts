@@ -8,6 +8,11 @@ def getinstance(path):
     ----------
     path : str
         Path to config.txt file which contains client_id, client_secret, password, username, user_agent
+
+    Returns
+    -------
+    instance
+        The PRAW Reddit Object as documented in PRAW's documentation
     """
     config_path = path 
     config_file = config_path + "/" + "config.txt"
@@ -25,4 +30,4 @@ def getinstance(path):
         user_agent=config_vars["user_agent"],
     )
     
-    return instance;
+    return instance

@@ -1,6 +1,12 @@
-import praw;
-
 def getinstance(path):
+    """
+    Script that returns PRAW instance for user.
+    
+    Parameters
+    ----------
+    path : str
+        Path to config.txt file which contains client_id, client_secret, password, username, user_agent
+    """
     config_path = path 
     config_file = config_path + "/" + "config.txt"
     config_vars = {}

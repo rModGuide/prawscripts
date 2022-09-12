@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.5'
+VERSION = '0.0.7'
 DESCRIPTION = 'Wrapper for PRAW scripts built over the years by the community and mods'
 
 # Setting up

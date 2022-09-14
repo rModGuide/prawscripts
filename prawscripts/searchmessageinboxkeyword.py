@@ -21,4 +21,4 @@ def searchmessageinboxkeyword(instance, keyword):
     """
     return [message.body
             for message in instance.inbox.all(limit = None)
-            if keyword in str(message.body) or keyword in str(message.subject)]
+            if (keyword in str(message.body) or keyword in str(message.subject))]

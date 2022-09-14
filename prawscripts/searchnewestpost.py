@@ -26,5 +26,5 @@ def searchnewestpost(instance, sub_name, num_post):
     return [[{"copy": f"www.reddit.com/r/{sub_name}/comments/{submission.id}",
               "original": f"www.reddit.com/r/{sub_name}/comments/{i.id}"}
              for i in instance.subreddit(sub_name).search(submission.title, limit=5)
-             if i.title == submission.title and submission.url != i.url]
+             if (i.title == submission.title and submission.url != i.url)]
             for submission in instance.subreddit(sub_name).new(limit=num_post)]

@@ -13,14 +13,22 @@ def checkbanstatus(instance, username):
     -------
     sub_list
         A list of subs user is banned from
+
+    Original Script
+    ---------------
+    for subreddit in reddit.redditor(str(reddit.user.me())).moderated():
+        try:
+            if any(reddit.subreddit(subreddit.display_name).banned(redditor="USERNAME")):
+                print(subreddit.display_name)
+        except:
+            continue
     """
     sub_list = []
 
-    for subreddit in instance.redditor(str(instance.user.me())).moderated():
+    for sub in instance.redditor(str(instance.user.me())).moderated():
         try:
-            if any(instance.subreddit(subreddit.display_name).banned(redditor=username)):
-                #print(subreddit.display_name)
-                sub_list.append(subreddit.display_name)
+            if any(instance.subreddit(sub.display_name).banned(redditor=username)):
+                sub_list.append(sub.display_name)
         except:
             continue
 

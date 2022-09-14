@@ -1,4 +1,4 @@
-def checkprivate(instance, sub_list):
+def checkprivate(instance):
     """
     Script to check if sub is privated.
 
@@ -9,13 +9,14 @@ def checkprivate(instance, sub_list):
 
     Returns
     -------
-    sub_list_results
-        A list of subs that are privated
-    """
-    sub_list_results = [];
+    A list of subs that are privated
 
-    for subreddit in instance.redditor(str(instance.user.me())).moderated():
+    Original Script
+    ---------------
+    for subreddit in reddit.redditor(str(reddit.user.me())).moderated():
         if (subreddit.subreddit_type == 'private'):
-            sub_list_results.append(f"{subreddit.display_name}, {subreddit.subreddit_type}")
-
-    return sub_list_results
+            print (subreddit.display_name, " ", subreddit.subreddit_type)
+    """
+    return [f"{sub.display_name}"
+            for sub in instance.redditor(str(instance.user.me())).moderated()
+            if (sub.subbredit_type == "private")]

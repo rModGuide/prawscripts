@@ -13,18 +13,18 @@ def searchnewestpost(instance, sub_name, num_post):
 
     Returns
     -------
-    post_list
-        A list of post copy from search
-    post_list_orig
-        A list of original post from search
-    """
-    post_list = []
-    post_list_orig = []
+    A list of python dictionaries that contain the copy of the comment link and the original reddit link.
 
-    for submission in instance.subreddit(sub_name).new(limit=num_post):
-        for i in instance.subreddit(sub_name).search(submission.title, limit=5):
+    Original Script
+    ---------------
+    for submission in reddit.subreddit("SUBREDDIT_NAME_HERE").new(limit=50):
+        for i in reddit.subreddit("SUBREDDIT_NAME_HERE").search(submission.title, limit=5):
             if i.title == submission.title and submission.url != i.url:
-                post_list.append(f"www.reddit.com/r/{sub_name}/comments/{submission.id}")
-                post_list_orig.append(f"www.reddit.com/r/{sub_name}/comments/{i.id}")
-    
-    return post_list, post_list_orig
+                print ("copy:", "www.reddit.com/r/SUBREDDIT_NAME_HERE/comments/"+submission.id)
+                print ("original:", "www.reddit.com/r/SUBREDDIT_NAME_HERE/comments/" + i.id)
+    """
+    return [[{"copy": f"www.reddit.com/r/{sub_name}/comments/{submission.id}",
+              "original": f"www.reddit.com/r/{sub_name}/comments/{i.id}"}
+             for i in instance.subreddit(sub_name).search(submission.title, limit=5)
+             if i.title == submission.title and submission.url != i.url]
+            for submission in instance.subreddit(sub_name).new(limit=num_post)]

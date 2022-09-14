@@ -21,9 +21,21 @@ def widgetbuilder(instance, sub_name, widget_title, background_color, header_col
     -------
     new_widget
         The newly created community widget
+
+    Original Script
+    ---------------
+    sub_name = "YOUR_SUBREDDIT"
+    widget_title = "YOUR_WIDGET_TITLE"   
+
+    widget_moderation = reddit.subreddit(sub_name).widgets.mod
+    styles = {"backgroundColor": "#f6f8ff", "headerColor": "#0000e9"}
+    subreddits = ["SUBREDDIT_NAME",  "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME", "SUBREDDIT_NAME"]
+    new_widget = widget_moderation.add_community_list(
+        widget_title, subreddits, styles, "description"
+    )
     """
-    widget_moderation = instance.subreddit(sub_name).widget.widget_mod
-    styles = {"backgroundColor", background_color, "headerColor", header_color}
+    widget_moderation = instance.subreddit(sub_name).widgets.mod
+    styles = {"backgroundColor": background_color, "headerColor": header_color}
     subreddits = subList
     new_widget = widget_moderation.add_communit_list(widget_title, subreddits, styles)
 

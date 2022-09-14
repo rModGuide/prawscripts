@@ -11,14 +11,22 @@ def checkcrosspostperms(instance):
     -------
     sub_list
         A list of subs that does not allow crossposting
+
+    Original Script
+    ---------------
+    for subreddit in reddit.redditor(str(reddit.user.me())).moderated():
+        try:
+            if not reddit.subreddit(subreddit.display_name).mod.settings()['allow_post_crossposts']:
+                print(f'{subreddit.display_name} \n')
+        except:
+            continue
     """
     sub_list = []
 
-    for subreddit in instance.redditor(str(instance.user.me())).moderated():
+    for sub in instance.redditor(str(instance.user.me())).moderated():
         try:
-            if not instance.subreddit(subreddit.display_name).mod.settings()['allow_post_crossposts']:
-                #print(f'{subreddit.display_name} \n')
-                sub_list.append(subreddit.display_name)
+            if not instance.subreddit(sub.display_name).mod.settings()['allow_post_crossposts']:
+                sub_list.append(sub.display_name)
         except:
             continue
 
